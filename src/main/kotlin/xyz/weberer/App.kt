@@ -17,5 +17,3 @@ class App : RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseE
         return APIGatewayProxyResponseEvent().apply { statusCode = 400 }
     }
 }
-
-//Build instructions \PartsPlatformAWS> ./gradlew shadowJar

@@ -2,8 +2,7 @@ package xyz.weberer
 
 import org.jetbrains.exposed.sql.*
 import xyz.weberer.db.DbConnection
-import xyz.weberer.db.tables.Part
-import xyz.weberer.db.tables.Product
+import xyz.weberer.db.tables.*
 import java.math.BigDecimal
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -22,7 +21,7 @@ private fun getRowJson(
     row.addProperty("productName", productName)
     row.addProperty("brandName", brandName)
     row.addProperty("price", priceString)
-    row.addProperty("imageUrl", imageUrl)
+    row.addProperty("url", imageUrl)
     return row
 }
 
@@ -49,4 +48,8 @@ fun getSummaryData(): String {
             }
     }
     return dataJsonArray.toString();
+}
+
+fun main() {
+    println(getSummaryData())
 }

@@ -1,0 +1,8 @@
+<div id="header">
+  <img src="../assets/Logo.png" alt="Parts Platform Logo"/>
+</div>
+<div id="content_panel">
+  <div *ngFor="let p of products">
+    <app-product [product]="p"></app-product>
+  </div>
+</div>

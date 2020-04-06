@@ -1,27 +1,18 @@
-# LemansFse
+# Parts Platform
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
+A live version of this demo application can be viewed at http://www.weberer.xyz.
+One thing to mention about the live version is that the first time it is loaded after
+being dormant for a while takes a significantly longer to return the product JSON. I assume
+this has to do w/ AWS loading the lambda function.
 
-## Development server
+The repository is divided into 3 branches:
+   1. **angularApp** (this branch) - This is the web application. The live version is hosted in AWS Amplify.
+   This branch was generated using Angular CLI, and can be run using `ng serve`, built using `ng build`.
+   2. **aws-lambda** - This is branch contains a Kotlin based AWS lambda function that queries the database, performs som basic
+   formatting, builds a JSON array and attaches it to the HTTP response.
+   3. **data-import** - This branch contains some SQL scripts to create the tables, and a small Kotlin app to load the CSV files into
+   the database.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The database is PostgreSQL running in an AWS RDS instance. The connection information for it is located in the data-import branch. 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Each branch of the repository has a README containing information about the branch and how to run it.
